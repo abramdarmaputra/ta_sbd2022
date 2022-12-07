@@ -16,7 +16,7 @@ class Country extends Model
      * @var array
      */
     protected $fillable = [
-        'id_country', 'country_name','country_code','id_player'
+        'id_country', 'country_name','country_coach','id_player'
     ];
     protected $primaryKey = 'id_country';
     protected $keyType = 'bigInteger';

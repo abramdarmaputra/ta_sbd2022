@@ -38,6 +38,12 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Posisi:</strong>
+                    <input type="text" name="position" value="{{ $player->position }}" class="form-control" placeholder="Posisi">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>ID Club:</strong>
                     <input type="number" name="id_club" value="{{ $player->id_club }}" class="form-control" placeholder="ID Club">
                 </div>

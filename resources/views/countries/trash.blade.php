@@ -16,7 +16,7 @@
         <tr>
             <th>ID Country</th>
             <th>Nama Country</th>
-            <th>Kode Country</th>
+            <th>Pelatih</th>
             <th>ID Player</th>
             <th width="280px">Action</th>
         </tr>
@@ -24,7 +24,7 @@
         <tr>
             <td>{{ $country->id_country }}</td>
             <td>{{ $country->country_name }}</td>
-            <td>{{ $country->country_code }}</td>
+            <td>{{ $country->country_coach }}</td>
             <td>{{ $country->id_player }}</td>
             <td>
                     <a class="btn btn-info" href="trash/{{ $country->id_country }}/restore">Restore</a>
