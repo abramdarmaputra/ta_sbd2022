@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
     
 use App\Models\Player;
+use Illuminate\Database\Eloquent\HigherOrderBuilderProxy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
     
 class PlayerController extends Controller
-{ 
+{
     /**
      * Display a listing of the resource.
      *
@@ -26,8 +27,22 @@ class PlayerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    //  public function sortby(Request $request)
+    // {
+    //     $players = DB::table('players')
+    //             ->orderBy('player_name', 'desc')
+    //             ->get();
+    // }
+
     public function index(Request $request)
     {
+        // $players = Player::get()->sortBy(function($query){
+        //     return $query->subject->player_name;
+        // })
+        // ->all();
+        // dd($players);
+
         $keyword = $request->keyword;
         $players = DB::table('players')
                     ->where('player_name','LIKE','%'.$keyword.'%')
@@ -170,5 +185,5 @@ class PlayerController extends Controller
         DB::delete('DELETE FROM players WHERE id_player=:id_player', ['id_player' => $id]);
         return redirect()->route('players.index')
                         ->with('success','Player Deleted Permanently');
-    }   
+    }
 }
